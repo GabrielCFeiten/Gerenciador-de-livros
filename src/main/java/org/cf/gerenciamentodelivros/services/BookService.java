@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class BookServices {
+public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
@@ -22,8 +22,8 @@ public class BookServices {
         return bookRepository.findAll();
     }
 
-    public void delete(BookModel bookModel) {
-        bookRepository.delete(bookModel);
+    public void delete(Long id) {
+        bookRepository.deleteById(id);
     }
 
     public BookModel update(Long id, BookModel bookModel) {
