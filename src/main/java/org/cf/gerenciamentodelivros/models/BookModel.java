@@ -16,4 +16,35 @@ public class BookModel {
     @Column(name = "Data_de_lancamento")
     private Integer anopublicacao;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getTituloLivro() {
+        return tituloLivro;
+    }
+
+    public void setTituloLivro(String tituloLivro) {
+        this.tituloLivro = tituloLivro;
+    }
+
+    public Integer getAnopublicacao() {
+        return anopublicacao;
+    }
+
+    public void setAnopublicacao(Integer anopublicacao) {
+        this.anopublicacao = anopublicacao;
+    }
 }
