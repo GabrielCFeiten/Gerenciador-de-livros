@@ -14,7 +14,7 @@ public class BookModel {
     private String tituloLivro;
     private  String autor;
     @Column(name = "Data_de_lancamento")
-    private Integer anopublicacao;
+    private Integer anoPublicacao;
 
     public Long getId() {
         return id;
@@ -40,11 +40,11 @@ public class BookModel {
         this.tituloLivro = tituloLivro;
     }
 
-    public Integer getAnopublicacao() {
-        return anopublicacao;
+    public Integer getAnoPublicacao() {
+        return anoPublicacao;
     }
 
-    public void setAnopublicacao(Integer anopublicacao) {
-        this.anopublicacao = anopublicacao;
+    public void setAnoPublicacao(Integer anopublicacao) {
+        this.anoPublicacao = anopublicacao;
     }
 }

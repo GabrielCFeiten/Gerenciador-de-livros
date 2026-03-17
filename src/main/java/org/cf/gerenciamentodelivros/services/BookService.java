@@ -33,7 +33,7 @@ public class BookService {
             BookModel bookExistente = bookSearch.get();
 
             bookExistente.setAutor(bookModel.getAutor());
-            bookExistente.setAnopublicacao(bookModel.getAnopublicacao());
+            bookExistente.setAnoPublicacao(bookModel.getAnoPublicacao());
             bookExistente.setTituloLivro(bookModel.getTituloLivro());
             return bookRepository.save(bookExistente);
         }
