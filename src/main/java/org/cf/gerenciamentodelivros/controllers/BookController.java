@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/livros")
@@ -30,7 +31,7 @@ public class BookController {
                 .path("/{id}")
                 .buildAndExpand(book.getId())
                 .toUri();
-        return  ResponseEntity.ok(request);
+        return  ResponseEntity.created(uri).body(request);
     }
 
     @DeleteMapping("/{id}")
@@ -43,5 +44,16 @@ public class BookController {
     public ResponseEntity<?> updateBook(@PathVariable Long id, @RequestBody BookModel book) {
         bookService.update(id, book);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<BookModel> findById(@PathVariable Long id) {
+        BookModel book = bookService.findById(id);
+
+        if (book != null) {
+            return ResponseEntity.ok(book);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

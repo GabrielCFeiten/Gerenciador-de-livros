@@ -40,4 +40,8 @@ public class BookService {
         return null;
     }
 
+    public BookModel findById(Long id) {
+        return bookRepository.findById(id).orElse(null);
+    }
+
 }
